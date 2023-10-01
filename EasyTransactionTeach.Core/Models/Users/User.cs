@@ -13,6 +13,7 @@ namespace EasyTransactionTeach.Core.Models.Users
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Nationality { get; set; }
+        public DateTimeOffset BirthDate { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public Guid AccountId { get; set; }
