@@ -6,6 +6,7 @@
 using EasyTransactionTeach.Core.Models.Accounts;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace EasyTransactionTeach.Core.Brokers.Storages
@@ -24,5 +25,8 @@ namespace EasyTransactionTeach.Core.Brokers.Storages
 
         public async Task<Account> SelectAccountById(Guid accountId) =>
             await this.Accounts.FindAsync(accountId);
+
+        public IQueryable<Account> SelectAllAccounts() =>
+            this.Accounts.AsQueryable();
     }
 }
