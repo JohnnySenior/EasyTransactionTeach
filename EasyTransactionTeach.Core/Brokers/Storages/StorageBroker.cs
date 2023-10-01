@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EasyTransactionTeach.Core.Brokers.Storages
 {
-    internal class StorageBroker : EFxceptionsContext
+    internal partial class StorageBroker : EFxceptionsContext
     {
         public DbSet<Account> Accounts { get; set; }
 
