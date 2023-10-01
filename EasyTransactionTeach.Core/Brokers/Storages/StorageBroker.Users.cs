@@ -3,6 +3,7 @@
 // Manage Your Money Easy
 //==========================
 
+using System;
 using System.Threading.Tasks;
 using EasyTransactionTeach.Core.Models.Users;
 using Microsoft.EntityFrameworkCore;
@@ -20,5 +21,8 @@ namespace EasyTransactionTeach.Core.Brokers.Storages
 
             return user;
         }
+
+        public async Task<User> SelectUserById(Guid userId) =>
+            await this.Users.FindAsync(userId);
     }
 }
