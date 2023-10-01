@@ -5,6 +5,7 @@
 
 using EasyTransactionTeach.Core.Models.Accounts;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading.Tasks;
 
 namespace EasyTransactionTeach.Core.Brokers.Storages
@@ -20,5 +21,8 @@ namespace EasyTransactionTeach.Core.Brokers.Storages
 
             return account;
         }
+
+        public async Task<Account> SelectAccountById(Guid accountId) =>
+            await this.Accounts.FindAsync(accountId);
     }
 }
