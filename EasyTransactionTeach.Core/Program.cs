@@ -3,6 +3,8 @@
 // Manage Your Money Easy
 //==========================
 
+using System;
+
 namespace EasyTransaction.Core
 {
     internal class Program
