@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/EasyTransactionTeach.Core/EasyTransactionTeach.db
+/EasyTransactionTeach.Core/EasyTransactionTeach.db-shm
+/EasyTransactionTeach.Core/EasyTransactionTeach.db-wal
