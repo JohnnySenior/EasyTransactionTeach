@@ -3,6 +3,8 @@
 // Manage Your Money Easy
 //==========================
 
+using System;
+
 namespace EasyTransactionTeach.Core.Models.Users
 {
     internal class User
@@ -13,5 +15,6 @@ namespace EasyTransactionTeach.Core.Models.Users
         public string Nationality { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public Guid AccountId { get; set; }
     }
 }
