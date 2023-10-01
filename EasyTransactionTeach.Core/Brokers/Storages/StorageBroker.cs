@@ -18,7 +18,7 @@ namespace EasyTransactionTeach.Core.Brokers.Storages
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Data sourse=..\\..\\..\\EasyTransactionTeach.db";
+            string connectionString = "Data source=..\\..\\..\\EasyTransactionTeach.db";
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             optionsBuilder.UseSqlite(connectionString);
         }
