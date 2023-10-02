@@ -3,7 +3,6 @@
 // Manage Your Money Easy
 //==========================
 
-using System;
 using System.Threading.Tasks;
 using EasyTransactionTeach.Core.Brokers.DateTimes;
 using EasyTransactionTeach.Core.Brokers.Loggings.Logging;
@@ -16,21 +15,21 @@ namespace EasyTransactionTeach.Core.Services.Foundations.Users
     {
         private readonly StorageBroker storageBroker;
         private readonly LoggingBroker loggingBroker;
-        private readonly DateTimeBroker timeBroker;
+        private readonly DateTimeBroker dateTimeBroker;
 
-        public UserService(StorageBroker storageBroker, LoggingBroker loggingBroker, DateTimeBroker timeBroker)
+        public UserService(StorageBroker storageBroker, LoggingBroker loggingBroker, DateTimeBroker dateTimeBroker)
         {
             this.storageBroker = storageBroker;
             this.loggingBroker = loggingBroker;
-            this.timeBroker = timeBroker;
+            this.dateTimeBroker = dateTimeBroker;
         }
 
         internal Task<User> AddUserAsync(User user) =>
         TryCatch(() =>
         {
-            ValidateUserOnAdd();
-        });
+            ValidateUserOnAdd(user);
 
-        
+            return this.storageBroker.InsertUserAsync(user);
+        });
     }
 }
