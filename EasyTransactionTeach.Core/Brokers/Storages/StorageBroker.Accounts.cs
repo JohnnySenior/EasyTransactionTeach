@@ -36,5 +36,18 @@ namespace EasyTransactionTeach.Core.Brokers.Storages
 
             return account;
         }
+
+        public async Task<bool> DeleteAccountAsync(Guid accountId)
+        {
+            var accountToDelete = await this.Accounts.FindAsync(accountId);
+
+            if (accountToDelete == null)
+                return false;
+
+            this.Accounts.Remove(accountToDelete);
+            await this.SaveChangesAsync();
+
+            return true;
+        }
     }
 }
