@@ -8,9 +8,9 @@ using Xeptions;
 
 namespace EasyTransactionTeach.Core.Models.Accounts.Exceptions
 {
-    internal class FailesStorageAccountException : Xeption
+    internal class FailedStorageAccountException : Xeption
     {
-        public FailesStorageAccountException(Exception innerException)
+        public FailedStorageAccountException(Exception innerException)
             : base(message: "Failed account storage error occurred, contact support", innerException)
         { }
     }

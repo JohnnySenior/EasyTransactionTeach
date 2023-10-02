@@ -48,7 +48,7 @@ namespace EasyTransactionTeach.Core.Services.Foundations.Accounts
             catch (DbUpdateException dbUpdateException)
             {
                 var failedStorageAccountException =
-                    new FailesStorageAccountException(dbUpdateException);
+                    new FailedStorageAccountException(dbUpdateException);
 
                 throw CreateDependencyException(failedStorageAccountException);
             }
