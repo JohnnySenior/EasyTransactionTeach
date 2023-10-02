@@ -28,5 +28,13 @@ namespace EasyTransactionTeach.Core.Brokers.Storages
 
         public IQueryable<User> SelectAllUser() =>
             this.Users.AsQueryable();
+
+        public async Task<User> UpdateUserAsync(User user)
+        {
+            this.Users.Update(user);
+            await this.SaveChangesAsync();
+
+            return user;
+        }
     }
 }
